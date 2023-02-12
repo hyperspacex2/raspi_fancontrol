@@ -10,7 +10,7 @@ COPY run-fan.py run-fan.py
 COPY requirements.txt requirements.txt
 
 #install linux packages
-RUN apt update && apt install raspberrypi 
+RUN apt-get update && apt-get install raspberrypi 
 
 RUN pip install -r requirements.txt
 CMD [ "python", "./run-fan.py"]
