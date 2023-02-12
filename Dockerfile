@@ -9,5 +9,8 @@ RUN apk add --no-cache gcc musl-dev linux-headers
 COPY run-fan.py run-fan.py
 COPY requirements.txt requirements.txt
 
+#install linux packages
+RUN apk add --no-cache raspberrypi
+
 RUN pip install -r requirements.txt
 CMD [ "python", "./run-fan.py"]
