@@ -26,7 +26,7 @@ def get_cpu_temperature() -> float:
     Retrieves the CPU temperature of the Raspberry Pi using vcgencmd.
     :return: A float value which indicates the CPU temperature.
     """
-    res = os.popen("vcgencmd measure_temp").readline()
+    res = os.popen("/opt/vc/bin/vcgencmd measure_temp").readline()
     temp = re.findall("\d+\.\d+", res)[0]
     print("temp is {0}".format(temp))  # Uncomment here for testing
     return temp
